@@ -1,6 +1,7 @@
  
 [build]
-    command = "npm run build && npm run export"
+    command = npm run build-prod
+
     publish = "out"
 
 "scripts": {
