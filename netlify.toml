@@ -1,9 +1,8 @@
  
 [build]
-  command = "npm run build-prod" # Your build command here
-  publish = ".next" # Publish directory for Next.js production build
+    command = "npm run build && npm run export"
+    publish = "out"
 
-# If using next export and skipping .next directory requirement
-[context.production.environment]
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+"scripts": {
+    "export": "next export"
 
