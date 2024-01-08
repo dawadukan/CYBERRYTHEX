@@ -1,10 +1,11 @@
-import React from 'react';
-import Divider from './Divider';
-import config from '../config/index.json';
+import React from 'react'
 
-const Product = () => {
-  const { product } = config;
-  const [firstItem, secondItem] = product.items;
+import config from '../config/index.json'
+import Divider from './Divider'
+
+const Service = () => {
+  const { service } = config
+  const [firstItem, secondItem] = service.items
 
   return (
     <section className={`bg-background py-8`} id="product">
@@ -12,7 +13,7 @@ const Product = () => {
         <h1
           className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
         >
-          {product.title.split(' ').map((word, index) => (
+          {service.title.split(' ').map((word, index) => (
             <span
               key={index}
               className={index % 2 ? 'text-primary' : 'text-border'}
@@ -60,7 +61,7 @@ const Product = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Product;
+export default Service
