@@ -12,7 +12,6 @@
       "name": "Features",
       "href": "features"
     },
-
     {
       "name": "Pricing",
       "href": "pricing"
@@ -32,14 +31,13 @@
     "description": "Threats to businesses are ever-present. At CyberRythex, we're your comprehensive solution, safeguarding your company from cyber threats. Our expert team offers tailored services like vulnerability assessments, malware protection, and secure data backups. With us as your partner, focus on your core business while we fortify your security.",
     "img": "/assets/images/happyTeam.jpeg",
     "primaryAction": {
-      "text": "Send Us whatsapp",
+      "text": "Send Us WhatsApp",
       "href": "https://wa.me/918851384871",
       "target": "_blank"
     },
     "secondaryAction": {
       "text": "Email us",
       "href": "mailto:Aniruddhpatidar@outlook.com?subject=I want Security Services",
-
       "target": "_blank"
     }
   },
@@ -85,7 +83,6 @@
       }
     ]
   },
-
   "pricing": {
     "title": "Pentesting Services",
     "categories": [
@@ -149,6 +146,7 @@
           }
         ]
       },
+
       {
         "name": "Cloud Pentesting",
         "plans": [
@@ -166,6 +164,16 @@
             "name": "Advanced",
             "priceRange": "Rs. 30,000 - 50,000",
             "description": "Covers complex cloud environments, containerized applications, and potential data security vulnerabilities"
+          }
+        ]
+      },
+      {
+        "name": "All-in-One Package",
+        "plans": [
+          {
+            "name": "Comprehensive Security",
+            "priceRange": "Rs. 2,50,000 - 3,00,000",
+            "description": "Includes web, API, network, and cloud pentesting for an all-encompassing cybersecurity solution."
           }
         ]
       }
