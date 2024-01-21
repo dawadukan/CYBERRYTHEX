@@ -19,6 +19,10 @@
     {
       "name": "About",
       "href": "about"
+    },
+    {
+      "name": "OurClients",
+      "href": "ourclients"
     }
   ],
   "callToAction": {
@@ -185,7 +189,7 @@
     "socialMedia": {
       "github": "https://github.com/",
       "twitter": "https://twitter.com/",
-      "linkedin": "https://www.linkedin.com/in//"
+      "linkedin": "https://www.linkedin.com///"
     }
   },
   "clients": [
