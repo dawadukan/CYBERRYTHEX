@@ -190,12 +190,41 @@
   },
   "clients": [
     {
+      "name": "Know Plastic",
+      "logo": "/assets/images/cropped-cropped-Know-Plastics-2-1-1.png"
+    },
+
+    {
+      "name": "Clat maths",
+      "logo": "/assets/images/CLAT-MATHS-LOGO-white.png"
+    },
+    {
       "name": "CEDS",
       "logo": "/assets/images/cropped-CEDS-LOGO-2021-e1620809389211.png"
     },
     {
-      "name": "Know Plastic",
-      "logo": "/assets/images/cropped-cropped-Know-Plastics-2-1-1.png"
+      "name": "healthroom",
+      "logo": "/assets/images/cropped-HealthRoomLogoBR1-e1591099563932-1.png"
+    },
+    {
+      "name": "elphinstone",
+      "logo": "/assets/images/cropped-Untitled-design-4.png"
+    },
+    {
+      "name": "Gandhi podava",
+      "logo": "/assets/images/download (1).png"
+    },
+    {
+      "name": "M3M",
+      "logo": "/assets/images/logo-1.png"
+    },
+    {
+      "name": "OON",
+      "logo": "/assets/images/OON-Logo-1.png"
+    },
+    {
+      "name": "kiddicot",
+      "logo": "/assets/images/WhatsApp_Image_2023-06-28_at_14.26.53-removebg-preview.png"
     }
   ]
 }

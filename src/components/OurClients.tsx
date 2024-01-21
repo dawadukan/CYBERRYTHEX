@@ -20,27 +20,12 @@ const OurClients = () => {
         </div>
         <div className={`flex flex-wrap justify-center pt-12 my-12 sm:my-4`}>
           {clients.map((client, index) => (
-            <div
+            <img
               key={`client-${index}`}
-              className={`flex flex-col w-full sm:w-5/6 md:w-1/2 lg:w-1/3 mx-auto mt-4`}
-            >
-              <div
-                className={`flex-1 bg-background rounded-t overflow-hidden shadow`}
-              >
-                <div
-                  className={`w-full p-8 text-3xl font-bold text-center text-primary`}
-                >
-                  
-                </div>
-                <div className={`w-full text-center text-base font-bold py-4`}>
-                  <img
-                    src={client.logo}
-                    alt={client.name}
-                    className="w-48 h-48 object-contain mx-auto" // Change the size here
-                  />
-                </div>
-              </div>
-            </div>
+              src={client.logo}
+              alt={client.name}
+              className="mx-4 my-4 w-1/4 h-auto object-contain" // Set width to 25%
+            />
           ))}
         </div>
       </div>
