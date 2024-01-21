@@ -30,7 +30,7 @@ const OurClients = () => {
                 <div
                   className={`w-full p-8 text-3xl font-bold text-center text-primary`}
                 >
-                  {client.name}
+                  
                 </div>
                 <div className={`w-full text-center text-base font-bold py-4`}>
                   <img
