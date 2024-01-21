@@ -30,13 +30,13 @@ const OurClients = () => {
                 <div
                   className={`w-full p-8 text-3xl font-bold text-center text-primary`}
                 >
-                  
+                  {client.name}
                 </div>
                 <div className={`w-full text-center text-base font-bold py-4`}>
                   <img
                     src={client.logo}
-                    
-                    className="w-32 h-32 object-contain mx-auto" // Set fixed dimensions here
+                    alt={client.name}
+                    className="w-48 h-48 object-contain mx-auto" // Change the size here
                   />
                 </div>
               </div>
