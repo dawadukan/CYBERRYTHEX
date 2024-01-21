@@ -6,7 +6,7 @@ const OurClients = () => {
   const { clients } = config;
 
   return (
-    <section className={`bg-background py-8 mt-1 mb-1`} id="our-clients">
+    <section className={`bg-background py-8`} id="our-clients">
       <div className={`container mx-auto px-2 pt-4 pb-12 text-gray-700`}>
         <h1
           className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
@@ -33,7 +33,11 @@ const OurClients = () => {
                   {client.name}
                 </div>
                 <div className={`w-full text-center text-base font-bold py-4`}>
-                  <img src={client.logo} alt={client.name} />
+                  <img
+                    src={client.logo}
+                    alt={client.name}
+                    className="w-32 h-32 object-contain mx-auto" // Set fixed dimensions here
+                  />
                 </div>
               </div>
             </div>
