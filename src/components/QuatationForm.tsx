@@ -1,65 +1,71 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const QuotationForm = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+const QuotationForm: React.FC = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-  const handleSubmit = async (e: { preventDefault: () => void; target: any; }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const response = await fetch(form.action, {
+    fetch('/', {
       method: 'POST',
-      body: formData,
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
-    if (response.ok) {
-      alert('Thank you for your submission!');
-    } else {
-      alert('Something went wrong, please try again later.');
-    }
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
   };
 
   return (
-    <form
-      name="quotation"
-      method="POST"
-      action="/success"
-      data-netlify="true"
-      onSubmit={handleSubmit}
-    >
-      <input type="hidden" name="form-name" value="quotation" />
-      <label htmlFor="name">Name:</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-      <label htmlFor="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <label htmlFor="message">Message:</label>
-      <textarea
-        id="message"
-        name="message"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        required
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <h2>Get Quotation</h2>
+      <form name="quotation" method="post" data-netlify="true" onSubmit={handleSubmit}>
+        {/* Hidden input for Netlify Forms to identify the form */}
+        <input type="hidden" name="form-name" value="quotation" />
+
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            value={formData.message}
+            onChange={handleChange}
+          ></textarea>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
   );
 };
 
