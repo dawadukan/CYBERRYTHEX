@@ -29,7 +29,7 @@ const QuotationForm: React.FC = () => {
   return (
     <div>
       <h2>Get Quotation</h2>
-      <form name="quotation" method="post" onSubmit={handleSubmit}>
+      <form name="quotation" method="post" data-netlify="true" onSubmit={handleSubmit}>
         {/* Hidden input for Netlify Forms to identify the form */}
         <input type="hidden" name="form-name" value="quotation" />
 
