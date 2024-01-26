@@ -88,88 +88,31 @@
     ]
   },
   "pricing": {
-    "title": "Pentesting Services",
-    "categories": [
+    "title": "Our Pricing Plans",
+    "items": [
       {
-        "name": "Web Pentesting",
-        "plans": [
-          {
-            "name": "Basic",
-            "priceRange": "Rs. 10,000 - 15,000",
-            "description": "Covers basic website scanning and vulnerability identification"
-          },
-          {
-            "name": "Standard",
-            "priceRange": "Rs. 15,000 - 25,000",
-            "description": "Includes manual testing and deeper analysis"
-          },
-          {
-            "name": "Advanced",
-            "priceRange": "Rs. 25,000 - 50,000",
-            "description": "Covers complex web applications and penetration testing with social engineering"
-          }
-        ]
+        "name": "Basic",
+        "features": ["Feature 1", "Feature 2", "Feature 3"],
+        "price": "$19.99",
+        "priceDetails": "per month"
       },
       {
-        "name": "API Pentesting",
-        "plans": [
-          {
-            "name": "Basic",
-            "priceRange": "Rs. 5,000 - 10,000",
-            "description": "Covers basic API scanning and common vulnerability checks"
-          },
-          {
-            "name": "Standard",
-            "priceRange": "Rs. 10,000 - 20,000",
-            "description": "Includes manual testing and API fuzzing"
-          },
-          {
-            "name": "Advanced",
-            "priceRange": "Rs. 20,000 - 35,000",
-            "description": "Covers complex APIs, integration testing, and potential business logic flaws"
-          }
-        ]
+        "name": "Standard",
+        "features": ["Feature 1", "Feature 2", "Feature 3"],
+        "price": "$39.99",
+        "priceDetails": "per month"
       },
       {
-        "name": "Network Pentesting",
-        "plans": [
-          {
-            "name": "Basic",
-            "priceRange": "Rs. 15,000 - 25,000",
-            "description": "Covers basic network scanning and vulnerability identification"
-          },
-          {
-            "name": "Standard",
-            "priceRange": "Rs. 25,000 - 50,000",
-            "description": "Includes manual penetration testing and social engineering attacks"
-          },
-          {
-            "name": "Advanced",
-            "priceRange": "Rs. 50,000 - 1,00,000",
-            "description": "Covers complex network infrastructure, wireless penetration testing, and advanced attack simulations"
-          }
-        ]
+        "name": "Premium",
+        "features": ["Feature 1", "Feature 2", "Feature 3"],
+        "price": "$59.99",
+        "priceDetails": "per month"
       },
-
       {
-        "name": "Cloud Pentesting",
-        "plans": [
-          {
-            "name": "Basic",
-            "priceRange": "Rs. 10,000 - 15,000",
-            "description": "Covers basic cloud platform scanning and configuration issues"
-          },
-          {
-            "name": "Standard",
-            "priceRange": "Rs. 15,000 - 30,000",
-            "description": "Includes manual testing of cloud services and potential misconfigurations"
-          },
-          {
-            "name": "Advanced",
-            "priceRange": "Rs. 30,000 - 50,000",
-            "description": "Covers complex cloud environments, containerized applications, and potential data security vulnerabilities"
-          }
-        ]
+        "name": "Enterprise",
+        "features": ["Feature 1", "Feature 2", "Feature 3"],
+        "price": "$99.99",
+        "priceDetails": "per month"
       }
     ]
   },

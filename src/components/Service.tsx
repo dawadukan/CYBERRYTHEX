@@ -1,11 +1,10 @@
-import React from 'react'
-
-import config from '../config/index.json'
-import Divider from './Divider'
+import React from 'react';
+import config from '../config/index.json';
+import Divider from './Divider';
 
 const Service = () => {
-  const { service } = config
-  const [firstItem, secondItem] = service.items
+  const { service } = config;
+  const [firstItem, secondItem] = service.items;
 
   return (
     <section className={`bg-background py-8`} id="service">
@@ -16,7 +15,7 @@ const Service = () => {
           {service.title.split(' ').map((word, index) => (
             <span
               key={index}
-              className={index % 2 ? 'text-primary' : 'text-border'}
+              className={index % 2 ? 'text-primary' : 'text-light-gray'}
             >
               {word}{' '}
             </span>
@@ -26,11 +25,11 @@ const Service = () => {
         <div className={`flex flex-wrap`}>
           <div className={`w-5/6 sm:w-1/2 p-6 mt-20`}>
             <h3
-              className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
+              className={`text-3xl text-gray-300 font-bold leading-none mb-3`}
             >
               {firstItem?.title}
             </h3>
-            <p className={`text-gray-600`}>{firstItem?.description}</p>
+            <p className={`text-gray-400`}>{firstItem?.description}</p>
           </div>
           <div className={`w-full sm:w-1/2 p-6`}>
             <img
@@ -51,17 +50,17 @@ const Service = () => {
           <div className={`w-full sm:w-1/2 p-6 mt-20`}>
             <div className={`align-middle`}>
               <h3
-                className={`text-3xl text-gray-800 font-bold leading-none mb-3`}
+                className={`text-3xl text-gray-300 font-bold leading-none mb-3`}
               >
                 {secondItem?.title}
               </h3>
-              <p className={`text-gray-600 mb-8`}>{secondItem?.description}</p>
+              <p className={`text-gray-400 mb-8`}>{secondItem?.description}</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Service
+export default Service;
