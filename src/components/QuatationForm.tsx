@@ -15,21 +15,10 @@ const QuotationForm: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => alert('Success!'))
-      .catch((error) => alert(error));
-  };
-
   return (
     <div>
       <h2>Get Quotation</h2>
-      <form name="quotation" method="post" data-netlify="true" onSubmit={handleSubmit}>
+      <form name="quotation" method="post" data-netlify="true">
         {/* Hidden input for Netlify Forms to identify the form */}
         <input type="hidden" name="form-name" value="quotation" />
 
