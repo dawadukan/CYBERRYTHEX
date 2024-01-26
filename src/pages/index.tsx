@@ -11,6 +11,7 @@ import MainHeroImage from '../components/MainHeroImage'
 import Pricing from '../components/Pricing'
 import Service from '../components/Service'
 import OurClients from '../components/OurClients'
+import ContactUs from './ContactUs'
 
 
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
         </>
       </LazyShow>
       <Analytics />
+      <ContactUs/>
     </div>
   )
 }

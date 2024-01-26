@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-import QuatationForm from './QuatationForm'; // Adjust the path accordingly
+import React from 'react';
+// import QuatationForm from './QuatationForm'; // Adjust the path accordingly
 import config from '../config/index.json';
 
 const Pricing = () => {
   const { pricing } = config;
   const { items, title } = pricing;
-
-  const [showQuotationForm, setShowQuotationForm] = useState(false);
-
-  const handleQuotationButtonClick = () => {
-    setShowQuotationForm(true);
-  };
 
   return (
     <section className={`bg-background py-8`} id="pricing">
@@ -59,21 +53,14 @@ const Pricing = () => {
                   {plan.price}
                   <span className={`text-base`}> {plan.priceDetails}</span>
                 </div>
-                {/* Add the "Get a Quotation" button and handle the click event */}
-                <button
-                  className={`w-full mt-4 px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600`}
-                  onClick={handleQuotationButtonClick}
-                >
-                  Get a Quotation
-                </button>
+                {/* Remove the "Get a Quotation" button */}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Render QuatationForm component conditionally based on state */}
-      {showQuotationForm && <QuatationForm />}
+      {/* Remove the QuatationForm component */}
     </section>
   );
 };
