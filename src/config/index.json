@@ -92,18 +92,22 @@
     "items": [
       {
         "name": "Essential",
+        "description": "Suitable for small businesses",
         "features": ["Vulnerability Assessment", "Malware Protection"]
       },
       {
         "name": "Standard",
+        "description": "Balanced security for growing businesses",
         "features": ["Web Firewall", "API Security", "Intrusion Detection"]
       },
       {
         "name": "Advanced",
+        "description": "Comprehensive security for established businesses",
         "features": ["Cloud Security", "Incident Response", "Secure Backups"]
       },
       {
         "name": "Enterprise",
+        "description": "Customized solutions for large enterprises",
         "features": [
           "Custom Solutions",
           "24/7 Monitoring",
@@ -137,7 +141,6 @@
       "name": "Know Plastic",
       "logo": "/assets/images/cropped-cropped-Know-Plastics-2-1-1.png"
     },
-
     {
       "name": "Clat maths",
       "logo": "/assets/images/CLAT-MATHS-LOGO-white.png"
