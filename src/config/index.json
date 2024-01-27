@@ -5,11 +5,7 @@
   },
   "navigation": [
     {
-      "name": "Service",
-      "href": "service"
-    },
-    {
-      "name": "Features",
+      "name": "Services",
       "href": "features"
     },
     {
@@ -17,12 +13,16 @@
       "href": "pricing"
     },
     {
-      "name": "About",
-      "href": "about"
+      "name": "Why Us",
+      "href": "service"
     },
     {
       "name": "OurClients",
       "href": "our-clients"
+    },
+    {
+      "name": "About",
+      "href": "about"
     }
   ],
   "callToAction": {
@@ -88,31 +88,28 @@
     ]
   },
   "pricing": {
-    "title": "Our Pricing Plans",
+    "title": "Explore Our Cybersecurity Plans",
     "items": [
       {
-        "name": "Basic",
-        "features": ["Feature 1", "Feature 2", "Feature 3"],
-        "price": "$19.99",
-        "priceDetails": "per month"
+        "name": "Essential",
+        "features": ["Vulnerability Assessment", "Malware Protection"]
       },
       {
         "name": "Standard",
-        "features": ["Feature 1", "Feature 2", "Feature 3"],
-        "price": "$39.99",
-        "priceDetails": "per month"
+        "features": ["Web Firewall", "API Security", "Intrusion Detection"]
       },
       {
-        "name": "Premium",
-        "features": ["Feature 1", "Feature 2", "Feature 3"],
-        "price": "$59.99",
-        "priceDetails": "per month"
+        "name": "Advanced",
+        "features": ["Cloud Security", "Incident Response", "Secure Backups"]
       },
       {
         "name": "Enterprise",
-        "features": ["Feature 1", "Feature 2", "Feature 3"],
-        "price": "$99.99",
-        "priceDetails": "per month"
+        "features": [
+          "Custom Solutions",
+          "24/7 Monitoring",
+          "Penetration Testing",
+          "Threat Intelligence"
+        ]
       }
     ]
   },
