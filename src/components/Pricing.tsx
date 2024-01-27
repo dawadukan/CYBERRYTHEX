@@ -2,20 +2,20 @@ import React, { useState, useRef } from 'react';
 import ContactForm from '../pages/ContactUs';
 import config from '../config/index.json';
 
-const Pricing: React.FC = () => {
+const Pricing = () => {
   const { pricing } = config;
   const { items, title } = pricing;
 
   const [showForm, setShowForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
-  const ContactFormRef = useRef<HTMLDivElement>(null);
+  const ContactFormRef = useRef<HTMLButtonElement>(null);
 
   const handleContactUsButtonClick = (planName: string) => {
     setSelectedPlan(planName);
     setShowForm(!showForm);
     if (ContactFormRef.current) {
-      ContactFormRef.current.scrollIntoView({ behavior: 'smooth' });
+       (ContactFormRef.current as HTMLButtonElement).scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -50,6 +50,7 @@ const Pricing: React.FC = () => {
                 <button
                   className="w-full mt-4 px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600"
                   onClick={() => handleContactUsButtonClick(plan.name)}
+                  ref={ContactFormRef}
                 >
                   Get a Quotation
                 </button>
@@ -60,9 +61,7 @@ const Pricing: React.FC = () => {
       </div>
 
       {/* Render ContactForm component conditionally based on state */}
-      {showForm &&<div ref={ContactFormRef}>
-        <ContactForm selectedPlan={selectedPlan} />
-      </div>}
+      {showForm && <ContactForm selectedPlan={selectedPlan} />}
     </section>
   );
 };
