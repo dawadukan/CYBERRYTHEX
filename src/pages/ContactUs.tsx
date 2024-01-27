@@ -13,6 +13,7 @@ const ContactForm: FC<ContactFormProps> = ({ selectedPlan }) => {
         method="POST"
         action="contact/?success=true"
         data-netlify="true"
+        id="contact-form"
       >
         <input type="hidden" name="form-name" value="contact-form" />
 

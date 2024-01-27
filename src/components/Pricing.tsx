@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import ContactForm from '../pages/ContactUs';
 import config from '../config/index.json';
 
-const Pricing = () => {
+const Pricing: React.FC = () => {
   const { pricing } = config;
   const { items, title } = pricing;
 
   const [showForm, setShowForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState('');
 
-  const handleContactUsButtonClick = (planName: React.SetStateAction<string>) => {
+  const ContactFormRef = useRef<HTMLDivElement>(null);
+
+  const handleContactUsButtonClick = (planName: string) => {
     setSelectedPlan(planName);
     setShowForm(!showForm);
+    if (ContactFormRef.current) {
+      ContactFormRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -55,7 +60,9 @@ const Pricing = () => {
       </div>
 
       {/* Render ContactForm component conditionally based on state */}
-      {showForm && <ContactForm selectedPlan={selectedPlan} />}
+      {showForm &&<div ref={ContactFormRef}>
+        <ContactForm selectedPlan={selectedPlan} />
+      </div>}
     </section>
   );
 };
