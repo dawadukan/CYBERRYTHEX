@@ -137,6 +137,8 @@
     }
   },
   "clients": [
+    {"name": "fotoPlane",
+      "logo": "/assets/images/fp-logo-tm.png"}
     {
       "name": "Know Plastic",
       "logo": "/assets/images/cropped-cropped-Know-Plastics-2-1-1.png"
