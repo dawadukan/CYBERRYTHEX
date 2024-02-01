@@ -1,124 +1,74 @@
-import React from 'react';
-
+import React, { useState, useRef } from 'react';
+import ContactForm from '../pages/ContactUs';
 import config from '../config/index.json';
 
 const Pricing = () => {
   const { pricing } = config;
   const { items, title } = pricing;
-  const [firstPlan, secondPlan, thirdPlan] = items;
+
+  const [showForm, setShowForm] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
+
+  // Use a div element as a ref for scrolling
+  const contactFormRef = useRef<HTMLDivElement>(null);
+
+  const handleContactUsButtonClick = (planName: string) => {
+    setSelectedPlan(planName);
+    setShowForm(!showForm);
+
+    // Scroll to the ContactForm component when the button is clicked
+    if (contactFormRef.current) {
+      contactFormRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <section className={`bg-background py-8`} id="pricing">
-      <div className={`container mx-auto px-2 pt-4 pb-12 text-primary`}>
-        <h1
-          className={`w-full my-2 text-5xl font-bold leading-tight text-center text-primary`}
-        >
+    <section className="bg-background py-8" id="pricing">
+      <div className="container mx-auto px-2 pt-12 pb-12 text-white">
+        <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-red-500 border-b-4 border-red-500">
           {title}
         </h1>
-        <div className={`w-full mb-4`}>
-          <div
-            className={`h-1 mx-auto bg-primary w-64 opacity-25 my-0 py-0 rounded-t`}
-          ></div>
+        <div className="w-full mb-6">
+          <div className="flex-1 bg-gray-800 text-white rounded-b-none overflow-hidden shadow"></div>
         </div>
-        <div
-          className={`flex flex-col sm:flex-row justify-center pt-12 my-12 sm:my-4`}
-        >
-          <div
-            className={`flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-background mt-4`}
-          >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {items.map((plan, index) => (
             <div
-              className={`flex-1 bg-background text-gray-600 rounded-t rounded-b-none overflow-hidden shadow`}
+              key={`pricing-plan-${index}`}
+              className="flex flex-col rounded-lg bg-gray-800 text-white border border-red-500"
             >
-              <div className={`p-8 text-3xl font-bold text-center border-b-4`}>
-                {firstPlan?.name}
+              <div className="p-8 text-3xl font-bold text-center border-b-4 border-red-500">
+                {plan.name}
               </div>
-              <ul className={`w-full text-center text-sm`}>
-                {firstPlan?.features.map((feature) => (
+              <p className="py-4 text-center text-sm">{plan.description}</p>
+              <ul className="w-full text-center text-sm">
+                {plan.features.map((feature, i) => (
                   <li
-                    className={`border-b py-4`}
-                    key={`${firstPlan.name}-${feature}`}
+                    className="border-b py-4"
+                    key={`${plan.name}-${i}`}
                   >
                     {feature}
                   </li>
                 ))}
               </ul>
-            </div>
-            <div
-              className={`flex-none mt-auto bg-background rounded-b rounded-t-none overflow-hidden shadow p-6`}
-            >
-              <div
-                className={`w-full pt-6 text-3xl text-gray-600 font-bold text-center`}
-              >
-                {firstPlan?.price}
-                <span className={`text-base`}> {firstPlan?.priceDetails}</span>
+              <div className="flex-none mt-auto bg-gray-900 rounded-b rounded-t-none overflow-hidden shadow p-6">
+                <button
+                  className="w-full mt-4 px-6 py-3 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors duration-300 ease-in-out"
+                  onClick={() => handleContactUsButtonClick(plan.name)}
+                >
+                  Get a Quotation
+                </button>
               </div>
             </div>
-          </div>
-          <div
-            className={`flex flex-col w-5/6 lg:w-1/3 mx-auto lg:mx-0 rounded-lg bg-background mt-4 sm:-mt-6 shadow-lg z-10`}
-          >
-            <div
-              className={`flex-1 bg-background rounded-t rounded-b-none overflow-hidden shadow`}
-            >
-              <div className={`w-full p-8 text-3xl font-bold text-center`}>
-                {secondPlan?.name}
-              </div>
-              <div
-                className={`h-1 w-full bg-primary my-0 py-0 rounded-t`}
-              ></div>
-              <ul className={`w-full text-center text-base font-bold`}>
-                {secondPlan?.features.map((feature) => (
-                  <li
-                    className={`border-b py-4`}
-                    key={`${secondPlan?.name}-${feature}`}
-                  >
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div
-              className={`flex-none mt-auto bg-background rounded-b rounded-t-none overflow-hidden shadow p-6`}
-            >
-              <div className={`w-full pt-6 text-4xl font-bold text-center`}>
-                {secondPlan?.price}
-                <span className={`text-base`}> {secondPlan?.priceDetails}</span>
-              </div>
-            </div>
-          </div>
-          <div
-            className={`flex flex-col w-5/6 lg:w-1/4 mx-auto lg:mx-0 rounded-none lg:rounded-l-lg bg-primary mt-4`}
-          >
-            <div
-              className={`flex-1 bg-background text-gray-600 rounded-t rounded-b-none overflow-hidden shadow`}
-            >
-              <div className={`p-8 text-3xl font-bold text-center border-b-4`}>
-                {thirdPlan?.name}
-              </div>
-              <ul className={`w-full text-center text-sm`}>
-                {thirdPlan?.features.map((feature) => (
-                  <li
-                    className={`border-b py-4`}
-                    key={`${thirdPlan?.name}-${feature}`}
-                  >
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div
-              className={`flex-none mt-auto bg-background rounded-b rounded-t-none overflow-hidden shadow p-6`}
-            >
-              <div
-                className={`w-full pt-6 text-3xl text-gray-600 font-bold text-center`}
-              >
-                {thirdPlan?.price}
-                <span className={`text-base`}> {thirdPlan?.priceDetails}</span>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+
+      {/* Use a div element as a ref for scrolling */}
+      <div ref={contactFormRef}></div>
+
+      {/* Render ContactForm component conditionally based on state */}
+      {showForm && <ContactForm selectedPlan={selectedPlan} />}
     </section>
   );
 };

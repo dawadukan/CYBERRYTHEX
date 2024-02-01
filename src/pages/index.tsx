@@ -8,8 +8,10 @@ import Header from '../components/Header';
 import LazyShow from '../components/LazyShow';
 import MainHero from '../components/MainHero';
 import MainHeroImage from '../components/MainHeroImage';
+import Service from '../components/Service';
 import Pricing from '../components/Pricing';
-import Product from '../components/Product';
+import OurClients from '../components/OurClients';
+
 
 const App = () => {
   return (
@@ -26,24 +28,29 @@ const App = () => {
         <MainHeroImage />
       </div>
       <Canvas />
-      <LazyShow>
-        <>
-          <Product />
-          <Canvas />
-        </>
-      </LazyShow>
+      
+      
       <LazyShow>
         <>
           <Features />
-          <Canvas />
         </>
       </LazyShow>
       <LazyShow>
-        <Pricing />
+        <>
+          <Pricing />
+           {/* Assuming this is a Contact Form component */}
+        </>
       </LazyShow>
       <LazyShow>
         <>
-          <Canvas />
+          <Service />
+        </>
+      </LazyShow>
+      <LazyShow>
+        <OurClients />
+      </LazyShow>
+      <LazyShow>
+        <>
           <About />
         </>
       </LazyShow>
